@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{81A77C25-6385-4F0C-9BAF-C0A14781BBA6}</ProjectGuid>
+    <ProjectGuid>{ED31E6EC-5DCA-4CF0-969B-380C8B481C1D}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>EquationTransformer</RootNamespace>
-    <AssemblyName>EquationTransformer</AssemblyName>
+    <RootNamespace>EquationTransformerTests</RootNamespace>
+    <AssemblyName>EquationTransformerTests</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,12 +44,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EquationProcessor\Summand.cs" />
+    <Compile Include="EquationProcessor\SummandTests.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EquationTransformer\EquationTransformer.csproj">
+      <Project>{81a77c25-6385-4f0c-9baf-c0a14781bba6}</Project>
+      <Name>EquationTransformer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

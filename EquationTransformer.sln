@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EquationTransformer", "EquationTransformer\EquationTransformer.csproj", "{81A77C25-6385-4F0C-9BAF-C0A14781BBA6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EquationTransformerTests", "EquationTransformerTests\EquationTransformerTests.csproj", "{ED31E6EC-5DCA-4CF0-969B-380C8B481C1D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{81A77C25-6385-4F0C-9BAF-C0A14781BBA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81A77C25-6385-4F0C-9BAF-C0A14781BBA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81A77C25-6385-4F0C-9BAF-C0A14781BBA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED31E6EC-5DCA-4CF0-969B-380C8B481C1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED31E6EC-5DCA-4CF0-969B-380C8B481C1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED31E6EC-5DCA-4CF0-969B-380C8B481C1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED31E6EC-5DCA-4CF0-969B-380C8B481C1D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
