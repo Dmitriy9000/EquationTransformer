@@ -44,12 +44,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EquationProcessor\EquationTransformerTests.cs" />
+    <Compile Include="EquationProcessor\EquationTests.cs" />
     <Compile Include="EquationProcessor\SummandTests.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EquationTransformer\EquationTransformer.csproj">

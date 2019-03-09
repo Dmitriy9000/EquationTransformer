@@ -43,6 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EquationProcessor\Equation.cs" />
+    <Compile Include="EquationProcessor\EquationException.cs" />
+    <Compile Include="EquationProcessor\EquationTransformer.cs" />
     <Compile Include="EquationProcessor\Summand.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
