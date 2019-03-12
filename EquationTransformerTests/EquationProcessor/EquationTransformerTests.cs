@@ -15,7 +15,7 @@ namespace EquationTransformerTests.EquationProcessor
         }
 
         [TestMethod]
-        public void EquationTransform1()
+        public void EquationTransformer_Transform_1()
         {
             var equation = new Equation("x^2 + 3.5xy + y = y^2 - xy + y");
             var result = _sut.Tranform(equation);
@@ -23,7 +23,7 @@ namespace EquationTransformerTests.EquationProcessor
         }
 
         [TestMethod]
-        public void EquationTransform2()
+        public void EquationTransformer_Transform_2()
         {
             var equation = new Equation(" + 3.5xy + y = y^2 - xy + y - x^2");
             var result = _sut.Tranform(equation);
@@ -31,7 +31,7 @@ namespace EquationTransformerTests.EquationProcessor
         }
 
         [TestMethod]
-        public void EquationTransform3()
+        public void EquationTransformer_Transform_3()
         {
             var equation = new Equation("0 = y^2 - xy + y - y - 3.5xy - x^2");
             var result = _sut.Tranform(equation);
@@ -39,7 +39,7 @@ namespace EquationTransformerTests.EquationProcessor
         }
 
         [TestMethod]
-        public void EquationTransform4()
+        public void EquationTransformer_Transform_4()
         {
             var equation = new Equation("y = y");
             var result = _sut.Tranform(equation);
@@ -47,7 +47,7 @@ namespace EquationTransformerTests.EquationProcessor
         }
 
         [TestMethod]
-        public void EquationTransform5()
+        public void EquationTransformer_Transform_5()
         {
             var equation = new Equation("0 = x^3 + x^2 + y^654 + y^654 + 2(xyz)^3 - 2(xyz)^3");
             var result = _sut.Tranform(equation);
@@ -55,11 +55,33 @@ namespace EquationTransformerTests.EquationProcessor
         }
 
         [TestMethod]
-        public void EquationTransform6()
+        public void EquationTransformer_Transform_6()
         {
             var equation = new Equation("x^2 + 4x + 5 = 0");
             var result = _sut.Tranform(equation);
             Assert.AreEqual("x^2 + 4x + 5 = 0", result.ToString());
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(EquationException))]
+        public void EquationTransformer_Transform_PoorFormat_1()
+        {
+            var equation = new Equation("++x = 1");
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(EquationException))]
+        public void EquationTransformer_Transform_PoorFormat_2()
+        {
+            var equation = new Equation("0 = x^3yz - 5");
+        }
+
+        [TestMethod]
+        public void EquationTransformer_Transform_9()
+        {
+            var equation = new Equation("1.6123x = 0.1x + 0.4x + 0.1123x");
+            var result = _sut.Tranform(equation);
+            Assert.AreEqual("x = 0", result.ToString());
         }
     }
 }

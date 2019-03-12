@@ -28,7 +28,7 @@ namespace EquationTransformer.EquationProcessor
         {
             var grouped = input.Left.GroupBy(c => new { c.Variable, c.Power });
             var compacted = new List<Summand>();
-            foreach(var g in grouped)
+            foreach (var g in grouped)
             {
                 var multiplier = g.Sum(f => f.IsPositive ? f.Multiplier : -f.Multiplier);
                 if (multiplier != 0)

@@ -6,7 +6,7 @@ namespace EquationTransformer.EquationProcessor
 {
     public class Summand
     {
-        public float Multiplier { get; private set; }
+        public decimal Multiplier { get; private set; }
         public int Power { get; private set; }
         public string Variable { get; private set; }
         public bool IsPositive { get; private set; }
@@ -46,10 +46,10 @@ namespace EquationTransformer.EquationProcessor
                     IsPositive = true;
                 }
 
-                var regex = new Regex(@"(?<mult>[+|-]?\d?[.]?\d)?(?<v>\w+)?");
+                var regex = new Regex(@"(?<mult>[+|-]?\d*[.]?\d*)?(?<v>\w+)?");
                 var match = regex.Match(remain);
 
-                if (!match.Success)
+                if (!match.Success || (!match.Groups["mult"].Success && !match.Groups["v"].Success))
                     throw new EquationException($"Incorrect summand format: {toParse}");
 
                 if (match.Groups["mult"].Success)
@@ -57,7 +57,11 @@ namespace EquationTransformer.EquationProcessor
                     var mult = match.Groups["mult"];
                     if (!string.IsNullOrWhiteSpace(match.Groups["mult"].Value))
                     {
-                        Multiplier = float.Parse(match.Groups["mult"].Value);
+                        Multiplier = decimal.Parse(match.Groups["mult"].Value);
+                    }
+                    else
+                    {
+                        Multiplier = 1;
                     }
                 }
                 else
@@ -85,7 +89,7 @@ namespace EquationTransformer.EquationProcessor
             }
         }
 
-        public Summand(float multiplier, int power, string variable, bool isPositive)
+        public Summand(decimal multiplier, int power, string variable, bool isPositive)
         {
             Multiplier = multiplier;
             Power = power;
